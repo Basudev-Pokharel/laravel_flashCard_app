@@ -7,6 +7,12 @@
     <title>Name and Color Manager</title>
     @viteReactRefresh
     @vite(['resources/js/app.jsx'])
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>

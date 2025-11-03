@@ -1,0 +1,219 @@
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.card-container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* //for Flip */
+    perspective: 1000px;
+}
+
+.card {
+    /* position: relative; */
+    perspective: 1000px;
+    border: 2px solid green;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 10px;
+
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 250px;
+    position: relative;
+}
+.favbutton {
+    position: absolute;
+    background-color: red;
+    z-index: 100;
+    top: 5px;
+    right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+}
+.card button {
+    background-color: green;
+    color: white;
+    padding: 4px;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+/* //Flip logic here */
+
+.card-inner {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+    /* For Flip? */
+    position: relative;
+    transform: preserve-3d;
+    transition: transform 0.6s;
+}
+.card-front,
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    flex-direction: column;
+    transform: rotateY(0deg);
+}
+.card-back {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Rotate fli? */
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* //New style */
+/* Thought to Update CSS so to get good Style */
+.header {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 280px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+.favbutton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 3;
+}
+
+.favbutton:hover {
+    background-color: #e84118;
+    transform: scale(1.1);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 12px;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #1e90ff, #00b894);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #ff3f5c, #542e24);
+    transform: rotateY(180deg);
+}
+
+.card button:not(.favbutton) {
+    margin-top: 12px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card button:not(.favbutton):hover {
+    background-color: #219150;
+    transform: scale(1.05);
+}
+.card:hover .card-front,
+.card:hover .card-back {
+    filter: brightness(1.05);
+}
