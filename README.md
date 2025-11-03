@@ -1,61 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Flashcard & NameColor App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a combined **Flashcard app** and **NameColor app** built with React for the frontend and Laravel for the backend. Users can toggle between the NameColor app and the Flashcard app seamlessly.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Flashcard App
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Displays **Finnish words**, **English translations**, and **example sentences**.
+-   Click a card to **rotate** it and reveal the English translation.
+-   **Add favorite words** with a favorite button.
+-   Favorites are stored in the backend in the `favourite_words` database.
+-   Uses mock data from the `words` database (simulating the [FinFast.fi](https://finfast.fi) API).
+    > Since the official FinFast API was not accessible, a custom API was created in Laravel to provide word data.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### NameColor App
 
-## Learning Laravel
+-   Displays names with dynamic colors.
+-   Can **toggle** between NameColor app and Flashcard app using a toggle button.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Backend
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Built with **Laravel**.
+-   Provides endpoints for:
+    -   Fetching word data (mocking FinFast API)
+    -   Storing favorite words in `favourite_words` database
+    -   Getting Favourite words from `favourite_words` database
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Frontend
 
-## Laravel Sponsors
+-   Built with **React via inertia.js**
+-   Handles:
+    -   Card rotation to reveal English translation
+    -   Favorite functionality
+    -   Toggle between apps
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Database
 
-### Premium Partners
+-   `words` — stores Finnish words, English translations, and examples (mock API)
+-   `favourite_words` — stores user favorite words
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Usage
 
-## Contributing
+1. Start the Laravel backend API.
+2. Start the React frontend.
+3. Toggle between **NameColor** and **Flashcard** app.
+4. Click on a flashcard to view the English translation.
+5. Click the favorite button to save words to the backend.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Tech Stack
 
-## Code of Conduct
+-   Frontend: React (via inertia)
+-   Backend: Laravel
+-   Database: MySQL
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Demo
 
-## Security Vulnerabilities
+### Video
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![Flashcard App Demo](public/images_video/Working_of_FlashCardAPP.mov)  
+_If It supports The video will run:_
 
-## License
+<video width="600" controls>
+  <source src="public/images_video/Working_of_FlashCardAPP.mp4)" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Screenshot
+
+![Flashcard App Screenshot](public/images_video/flashcard.png)
