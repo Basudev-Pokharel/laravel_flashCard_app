@@ -62,7 +62,7 @@ _If It supports The video will run:_
 
 <video width="600" controls>
   <source src="public/images_video/Working_of_FlashCardAPP.mp4)" type="video/mp4">
-  Your browser does not support the video tag.
+  Your browser does not support the video tag. The video is present in public/images_video there you may see
 </video>
 
 ### Screenshot
